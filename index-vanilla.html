@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetalSynth Pro - Flower Keyboard Synth (Vanilla JS)</title>
+  <meta name="description" content="PetalSynth Pro: A premium interactive flower synthesizer keyboard built with pure HTML, CSS, and Vanilla JavaScript." />
+  <link rel="stylesheet" href="./html-version/style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div style="display: flex; align-items: center; gap: 0.8rem; min-width: 0;">
+      <span class="brand-title">PetalSynth Pro</span>
+      <div class="theme-buttons" id="theme-buttons-top">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <div class="bpm-widget">
+        <span class="bpm-label">BPM</span>
+        <div class="bpm-value-box">
+          <div class="bpm-dot" id="bpm-dot"></div>
+          <span class="bpm-number">120</span>
+        </div>
+      </div>
+
+      <div class="nav-divider"></div>
+
+      <div class="volume-widget">
+        <span class="volume-icon" title="Volume">🔊</span>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="70"
+          class="volume-slider"
+          id="volume-slider"
+          aria-label="Volume"
+        />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <!-- Status Badge -->
+    <div class="status-badge-wrapper">
+      <div class="status-badge" id="status-badge">
+        <span>✦</span>
+        <span>☀️ COZY SUNFLOWER MODE</span>
+      </div>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="bento-grid">
+      <!-- Left Pads (A, S, D, F) -->
+      <div class="pads-column" id="left-pads-column">
+        <!-- Injected via app.js -->
+      </div>
+
+      <!-- Central Terrarium Centerpiece -->
+      <div class="terrarium">
+        <div class="flower-container">
+          <img
+            src="./src/imports/Gemini_Generated_Image_nff0d5nff0d5nff0.png"
+            alt="Sunflower Terrarium"
+            class="flower-image"
+            id="flower-image"
+          />
+          <div class="terrarium-version">
+            Terrarium v1.0.4
+          </div>
+        </div>
+
+        <!-- Floating Particles Container -->
+        <div class="particles-layer" id="particles-layer"></div>
+      </div>
+
+      <!-- Right Pads (G, H, J, K) -->
+      <div class="pads-column" id="right-pads-column">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+
+    <!-- Mobile Theme Switcher -->
+    <div class="mobile-themes" id="theme-buttons-mobile">
+      <!-- Injected via app.js -->
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <div class="combo-badge" id="combo-badge">
+      <span>🔥</span>
+      <span id="combo-text">COMBO: 0</span>
+    </div>
+
+    <div class="progress-widget">
+      <div class="progress-header">
+        <span>STICKER PROGRESS</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <button class="gallery-btn" id="gallery-btn">
+      <span>✦</span>
+      <span>MY STICKERS (<span id="sticker-count">0</span>/8)</span>
+    </button>
+  </nav>
+
+  <!-- Reward Modal -->
+  <div class="modal-overlay" id="reward-modal" role="dialog" aria-modal="true" aria-labelledby="reward-title">
+    <div class="modal-content">
+      <div class="modal-bg-circle-1"></div>
+      <div class="modal-bg-circle-2"></div>
+      <div style="position: relative; z-index: 10;">
+        <div style="font-size: 3.5rem; margin-bottom: 1rem;">🏆</div>
+        <h2 class="modal-title" id="reward-title">Sticker Unlocked!</h2>
+        <p class="reward-desc" id="reward-desc">You've reached a high combo in Sunflower mode!</p>
+        <div class="reward-emoji-box" id="reward-emoji">🌻</div>
+        <button class="collect-btn" id="reward-collect-btn">COLLECT & CONTINUE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div class="modal-overlay" id="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
+    <div class="modal-content" style="max-width: 40rem;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="gallery-title">Sticker Album</h2>
+        <button class="close-btn" id="gallery-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="./html-version/app.js"></script>
+</body>
+</html>
